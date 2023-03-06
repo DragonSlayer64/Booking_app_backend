@@ -1,13 +1,9 @@
 import exrpess from "express";
+import { login, register } from "../controllers/auth.js";
 
 const router = exrpess.Router();
 
-router.get("/", (req, res) => {
-  res.send("Hello, this is auth endpoint");
-});
-
-router.get("/register", (req, res) => {
-  res.send("Hello, this is auth register endpoint");
-});
+router.post("/register", register);
+router.post("/login", login);
 
 export default router;
